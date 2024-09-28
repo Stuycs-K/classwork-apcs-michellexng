@@ -11,6 +11,14 @@ public class MyArrays{
     return result + "]";
   }
 
+  public static int[] returnCopy(int[] ary){
+    int[] copy = new int[ary.length];
+    for (int i = 0; i < ary.length; i++){
+      copy[i] = ary[i];
+    }
+    return copy;
+  }
+
   public static void main(String[] args){
     int[] nums1 = {1, 2, 3};
     System.out.println("Expected: [1, 2, 3], received: " + arrayToString(nums1));
