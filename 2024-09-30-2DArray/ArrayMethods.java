@@ -28,7 +28,14 @@ public static String arrToString(int[] nums) {
   */
 public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
-  return "";
+  String result = "[";
+  for (int i = 0; i < ary.length; i++){
+    result+=arrToString(ary[i]);
+    if (i < ary.length-1){
+      result+=", ";
+    }
+  }
+  return result + "]";
 }
 
 /*Return the sum of all of the values in the 2D array */
@@ -47,14 +54,14 @@ public static int[][] swapRC(int[][]nums){
 
 public static void main(String[] args) {
   int [][] arr1a = {{1, 4}, {2, 5}, {3, 6}};
-  System.out.println("Expected: [[1,4], [2,5], [3,6]], Received: " + arrToString(arr1a)
-  + "| Equals? " + (arrToString(arr1a).equals("[[1,4], [2,5], [3,6]]")));
+  System.out.println("Expected: [[1, 4], [2, 5], [3, 6]], Received: " + arrToString(arr1a)
+  + "| Equals? " + (arrToString(arr1a).equals("[[1, 4], [2, 5], [3, 6]]")));
   int [][] arr1b = {{-3, 5, 0}, {1}};
   System.out.println("Expected: [[-3, 5, 0], [1]], Received: " + arrToString(arr1b)
   + "| Equals? " + (arrToString(arr1b).equals("[[-3, 5, 0], [1]]")));
   int [][] arr1c = {{7, 8, -9}, {100000, 1, 3, 4, 2}, {}};
-  System.out.println("Expected: [[7, 8, -9], [100000, 1, 3, 4, 2}, []], Received: " + arrToString(arr1c)
-  + "| Equals? " + (arrToString(arr1c).equals("[[7, 8, -9], [100000, 1, 3, 4, 2}, []]")));
+  System.out.println("Expected: [[7, 8, -9], [100000, 1, 3, 4, 2], []], Received: " + arrToString(arr1c)
+  + "| Equals? " + (arrToString(arr1c).equals("[[7, 8, -9], [100000, 1, 3, 4, 2], []]")));
   int [][] arr1d = {{}, {5, 3, 2}, {4}};
   System.out.println("Expected: [[], [5, 3, 2], [4]], Received: " + arrToString(arr1d)
   + "| Equals? " + (arrToString(arr1d).equals("[[], [5, 3, 2], [4]]")));
