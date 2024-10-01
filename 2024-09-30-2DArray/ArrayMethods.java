@@ -151,6 +151,41 @@ public static void main(String[] args) {
   //replaceNegative test cases
   arr = new int[][]{{1, 4}, {-2, -5}, {3, -6}};
   replaceNegative(arr);
-  System.out.println("Expected: [[1, 4], [0, 1], [3, 0]], Received: " + arrToString(arr));
+  System.out.println("Expected: [[1, 4], [0, 1], [3, 0]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[1, 4], [0, 1], [3, 0]]")));
+  arr = new int[][]{{-1, -2, -3}, {4, -5}};
+  replaceNegative(arr);
+  System.out.println("Expected: [[1, 0, 0], [4, 1]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[1, 0, 0], [4, 1]]")));
+  arr = new int[][]{{2, 2, 2}, {3, 3, 3}, {4, 4, 4}};
+  replaceNegative(arr);
+  System.out.println("Expected: [[2, 2, 2], [3, 3, 3], [4, 4, 4]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[2, 2, 2], [3, 3, 3], [4, 4, 4]]")));
+  arr = new int[][]{{-500, -32, -3}, {-23}, {-1675, 432, -23423}};
+  replaceNegative(arr);
+  System.out.println("Expected: [[1, 0, 0], [0], [0, 432, 1]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[1, 0, 0], [0], [0, 432, 1]]")));
+  arr = new int[][]{{-1}, {0, -2}, {0, 0, -3}};
+  replaceNegative(arr);
+  System.out.println("Expected: [[1], [0, 1], [0, 0, 1]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[1], [0, 1], [0, 0, 1]]")));
+  arr = new int[][]{{3}, {-2, 1}};
+  replaceNegative(arr);
+  System.out.println("Expected: [[3], [0, 1]], Received: " + arrToString(arr) + " | Equals? " + (arrToString(arr).equals("[[3], [0, 1]]")));
+  
+  //copy test cases
+  arr = new int[][]{{1, 4}, {-2, -5}, {3, -6}};
+  System.out.println("Expected: [[1, 4], [-2, -5], [3, -6]], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[1, 4], [0, 1], [3, 0]]")) + " | Different addresses: " + (!(arr == copy(arr))));
+  arr = new int[][]{{}, {}}};
+  System.out.println("Expected: [[], []], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[], []]")) + " | Different addresses: " + (!(arr == copy(arr))));
+  arr = new int[][]{{0, 0, 0}, {0, 0};
+  System.out.println("Expected: [[0, 0, 0], [0, 0]], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[0, 0, 0], [0, 0]]")) + " | Different addresses: " + (!(arr == copy(arr))));
+  arr = new int[][]{{-1231, 4}, {-34}, {-123}};
+  System.out.println("Expected: [[-1231, 4], [-34], [-123]], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[-1231, 4], [-34], [-123]]")) + " | Different addresses: " + (!(arr == copy(arr))));
+  arr = new int[][]{{-13464, 2}, {1093, 23234, 3}};
+  System.out.println("Expected: [[-13464, 2], [1093, 23234, 3]], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[-13464, 2], [1093, 23234, 3]]")) + " | Different addresses: " + (!(arr == copy(arr))));
+  arr = new int[][]{{}, {5, 3, 2}, {4}};
+  System.out.println("Expected: [[], [5, 3, 2], [4]], Received: " + arrToString(copy(arr)) 
+  + " | Same elements: " + (arrToString(arr).equals("[[], [5, 3, 2], [4]]")) + " | Different addresses: " + (!(arr == copy(arr))));
 }
 }
