@@ -89,8 +89,22 @@ public static void replaceNegative(int[][] vals){
 //DO NOT use any built in methods that "copy" an array.
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
+
+//helper method
+public static int[] returnCopy(int[]ary){
+  int[] copy = new int[ary.length];
+  for (int i = 0; i < ary.length; i++){
+    copy[i] = ary[i];
+  }
+  return copy;
+}
+
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  int[][] result = new int[nums.length][];
+  for (int i = 0; i < nums.length; i++){
+    result[i] = returnCopy(nums[i]);
+  }
+  return result;
 }
 
 public static void main(String[] args) {
@@ -172,10 +186,10 @@ public static void main(String[] args) {
   arr = new int[][]{{1, 4}, {-2, -5}, {3, -6}};
   System.out.println("Expected: [[1, 4], [-2, -5], [3, -6]], Received: " + arrToString(copy(arr)) 
   + " | Same elements: " + (arrToString(arr).equals("[[1, 4], [0, 1], [3, 0]]")) + " | Different addresses: " + (!(arr == copy(arr))));
-  arr = new int[][]{{}, {}}};
+  arr = new int[][]{{}, {}};
   System.out.println("Expected: [[], []], Received: " + arrToString(copy(arr)) 
   + " | Same elements: " + (arrToString(arr).equals("[[], []]")) + " | Different addresses: " + (!(arr == copy(arr))));
-  arr = new int[][]{{0, 0, 0}, {0, 0};
+  arr = new int[][]{{0, 0, 0}, {0, 0}};
   System.out.println("Expected: [[0, 0, 0], [0, 0]], Received: " + arrToString(copy(arr)) 
   + " | Same elements: " + (arrToString(arr).equals("[[0, 0, 0], [0, 0]]")) + " | Different addresses: " + (!(arr == copy(arr))));
   arr = new int[][]{{-1231, 4}, {-34}, {-123}};
