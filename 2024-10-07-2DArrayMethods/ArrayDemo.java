@@ -5,7 +5,18 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-
+    int[][] arr = new int[]{1, 4};
+    System.out.println("Expected: " + Arrays.toString(arr) + ", Received: " + arrToString(arr)
+    + "| Equals? " + (arrToString(arr).equals(Arrays.toString(arr))));
+    arr = new int[]{-12, 234};
+    System.out.println("Expected: " + Arrays.toString(arr) + ", Received: " + arrToString(arr)
+    + "| Equals? " + (arrToString(arr).equals(Arrays.toString(arr))));
+    arr = new int[][]{{7, 8, -9}, {100000, 1, 3, 4, 2}, {}};
+    System.out.println("Expected: " + deepToString(arr) + ", Received: " + arrToString(arr)
+    + "| Equals? " + (arrToString(arr).equals(deepToString(arr))));
+    arr = new int[][]{{-3, 5, 0}, {1}};
+    System.out.println("Expected: " + deepToString(arr) + ", Received: " + arrToString(arr)
+    + "| Equals? " + (arrToString(arr).equals(deepToString(arr))));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -77,6 +88,16 @@ public class ArrayDemo{
   //DO NOT use any built in methods that "copy" an array.
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
+
+  // helper method
+  public static int[] returnCopy(int[]ary){
+    int[] copy = new int[ary.length];
+    for (int i = 0; i < ary.length; i++){
+      copy[i] = ary[i];
+    }
+    return copy;
+  }
+
   public static int[][] copy(int[][] nums){
     int[][] result = new int[nums.length][];
     for (int i = 0; i < nums.length; i++){
