@@ -5,18 +5,18 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
-    int[][] arr = new int[]{1, 4};
+    int[] arr = new int[]{1, 4};
     System.out.println("Expected: " + Arrays.toString(arr) + ", Received: " + arrToString(arr)
     + "| Equals? " + (arrToString(arr).equals(Arrays.toString(arr))));
     arr = new int[]{-12, 234};
     System.out.println("Expected: " + Arrays.toString(arr) + ", Received: " + arrToString(arr)
     + "| Equals? " + (arrToString(arr).equals(Arrays.toString(arr))));
-    arr = new int[][]{{7, 8, -9}, {100000, 1, 3, 4, 2}, {}};
-    System.out.println("Expected: " + deepToString(arr) + ", Received: " + arrToString(arr)
-    + "| Equals? " + (arrToString(arr).equals(deepToString(arr))));
-    arr = new int[][]{{-3, 5, 0}, {1}};
-    System.out.println("Expected: " + deepToString(arr) + ", Received: " + arrToString(arr)
-    + "| Equals? " + (arrToString(arr).equals(deepToString(arr))));
+    int[][] arr2 = new int[][]{{7, 8, -9}, {100000, 1, 3, 4, 2}, {}};
+    System.out.println("Expected: " + Arrays.deepToString(arr2) + ", Received: " + arrToString(arr2)
+    + "| Equals? " + (arrToString(arr2).equals(Arrays.deepToString(arr2))));
+    arr2 = new int[][]{{-3, 5, 0}, {1}};
+    System.out.println("Expected: " + Arrays.deepToString(arr2) + ", Received: " + arrToString(arr2)
+    + "| Equals? " + (arrToString(arr2).equals(Arrays.deepToString(arr2))));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
