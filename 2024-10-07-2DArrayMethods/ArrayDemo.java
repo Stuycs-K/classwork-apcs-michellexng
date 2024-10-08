@@ -168,6 +168,17 @@ public class ArrayDemo{
   //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
   // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
   public static String htmlTable(int[][]nums){
-    return "";
+    String result = "<table>";
+    for (int i = 0; i < nums.length; i++){
+      result+="<tr>";
+      for (int n = 0; n < nums[i].length; n++){
+        result+="<td>" + nums[i][n] + "</td>";
+      if (nums[i].length == 0){
+        result+="<td></td>";
+      }
+      }
+      result+="</tr>";
+    }
+    return result + "</table>";
   }
 }
