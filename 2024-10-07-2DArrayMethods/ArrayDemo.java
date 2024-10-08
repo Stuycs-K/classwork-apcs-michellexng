@@ -20,23 +20,37 @@ public class ArrayDemo{
 
     // countZeros2D test cases
     int[][] arr3 = new int[][]{{2, 0, 3}, {1, 4}, {6, 20, -3}};
-    System.out.println("Expected: 1, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 1));
+    System.out.println("Expected: 1, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 1));
     arr3 = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0}};
-    System.out.println("Expected: 8, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 8));
+    System.out.println("Expected: 8, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 8));
     arr3 = new int[][]{{}, {}};
-    System.out.println("Expected: 0, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 0));
+    System.out.println("Expected: 0, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 0));
     arr3 = new int[][]{{13542}, {23, 0}};
-    System.out.println("Expected: 1, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 1));
+    System.out.println("Expected: 1, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 1));
     arr3 = new int[][]{{}, {0}};
-    System.out.println("Expected: 1, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 1));
+    System.out.println("Expected: 1, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 1));
     arr3 = new int[][]{{1, 2, 3, 4, 0}, {0, 0, 0, 1, 0, 0, 0}};
-    System.out.println("Expected: 7, Received: " + countZeros2D(arr3)
-    + " | Equals? " + (countZeros2D(arr3) == 7));
+    System.out.println("Expected: 7, Received: " + countZeros2D(arr3) + " | Equals? " + (countZeros2D(arr3) == 7));
+    
+    // htmlTable test cases
+    int[][] arr4 = new int[][]{{2, 0, 3}, {1, 4}, {6, 20, -3}};
+    System.out.println("Expected: <table><tr><td>2</td><td>0</td><td>3</td></tr><tr><td>1</td><td>4</td></tr><tr><td>6</td><td>20</td><td>-3</td></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr><td>2</td><td>0</td><td>3</td></tr><tr><td>1</td><td>4</td></tr><tr><td>6</td><td>20</td><td>-3</td></tr></table>")));
+    arr4 = new int[][]{{3}, {4}, {5}};
+    System.out.println("Expected: <table><tr><td>3</td></tr><tr><td>4</td></tr><tr><td>5</td></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr><td>3</td></tr><tr><td>4</td></tr><tr><td>5</td></tr></table>")));
+    arr4 = new int[][]{{}, {}, {}};
+    System.out.println("Expected: <table><tr></tr><tr></tr><tr></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr></tr><tr></tr><tr></tr></table>")));
+    arr4 = new int[][]{{}, {1, 2, 3}, {}};
+    System.out.println("Expected: <table><tr></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr></tr><tr><td>1</td><td>2</td><td>3</td></tr><tr></tr></table>")));
+    arr4 = new int[][]{{}, {-7, 8}, {-9}};
+    System.out.println("Expected: <table><tr></tr><tr><td>-7</td><td>8</td></tr><tr><td>-9</td></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr></tr><tr><td>-7</td><td>8</td></tr><tr><td>-9</td></tr></table>")));
+    arr4 = new int[][]{{10}, {-100}, {1000}};
+    System.out.println("Expected: <table><tr><td>10</td></tr><tr><td>-100</td></tr><tr><td>1000</td></tr></table>, Received: " + htmlTable(arr4)
+    + " | Equals? " + (htmlTable(arr4).equals("<table><tr><td>10</td></tr><tr><td>-100</td></tr><tr><td>1000</td></tr></table>")));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
