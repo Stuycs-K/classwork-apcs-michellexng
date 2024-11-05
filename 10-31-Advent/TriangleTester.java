@@ -11,16 +11,7 @@ public class TriangleTester{
       side[i]=input.nextInt();
       i++;
     }
-    if (side[0] + side[1] <= side[2]){
-      return false;
-    }
-    if (side[1]+side[2] <= side[0]){
-      return false;
-    }
-    if (side[0] + side[2] <= side[1]){
-      return false;
-    }
-    return true;
+    return ((side[0] + side[1] > side[2]) && (side[1]+side[2] > side[0]) && (side[0] + side[2] > side[1]));
   }
   public static int countTrianglesA(String filename){
     try{
@@ -32,6 +23,7 @@ public class TriangleTester{
           result++;
         }
       }
+      input.close();
       return result;
     } catch(FileNotFoundException ex){
         System.out.println("file not found");
@@ -65,14 +57,39 @@ public class TriangleTester{
         triangle1 = "";
         triangle2 = "";
       }
+      input.close();
       return result;
     } catch (FileNotFoundException ex){
       System.out.println("file not found");
       return 0;
     }
   }
+  public static int countComplexFile(String filename){
+    try{
+      File file = new File(filename);
+      Scanner input = new Scanner(file);
+      int result = 0;
+      String[] nums;
+      String newTriangle;
+      while (input.hasNextLine()){
+        nums = input.nextLine().split("x");
+        newTriangle = Integer.parseInt(nums[0])+" "+Integer.parseInt(nums[1])+" "+Integer.parseInt(nums[2]);
+        if (isTriangle(newTriangle)){
+          result++;
+        }
+        nums = new String[] {};
+        newTriangle = " ";
+      }
+      return result;
+    } catch(FileNotFoundException ex){
+        System.out.println("file not found");
+        return 0;
+    }
+  }
+
   public static void main(String[] args){
-    System.out.println(countTrianglesA("inputTri.txt"));
-    System.out.println(countTrianglesB("inputTri.txt"));
+   // System.out.println(countTrianglesA("inputTri.txt"));
+   // System.out.println(countTrianglesB("inputTri.txt"));
+    System.out.println(countComplexFile("inputTri.txt"));
   }
 }
