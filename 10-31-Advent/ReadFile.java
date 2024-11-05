@@ -9,10 +9,15 @@ public class ReadFile {
     try {
       File file = new File("ReadFile.java");//1
       Scanner input = new Scanner(file);
-      while (file.hasNext()){
-        System.out.println(file.next());
-      }
       //CODE THAT SCANS THE FILE.
+
+      System.out.println("\nPrint every '{':");
+      while (input.hasNextLine()){
+        String nextLine = input.nextLine();
+        if (nextLine.contains("{")){
+          System.out.println(nextLine);
+        }
+      }
       input.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
