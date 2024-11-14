@@ -97,6 +97,9 @@ public class ArrayListPractice {
     for (int i = 0; i < 5; i++){
       testMixLists(createRandomArray(4), createRandomArray(10));
     }
+    for (int i = 0; i < 5; i++){
+      testMixLists(createRandomArray(10), createRandomArray(4));
+    }
   }
 
 }
