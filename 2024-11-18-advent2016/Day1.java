@@ -27,6 +27,13 @@ public class Day1{
   }
 
   public static void main(String[] args){
-    //System.out.println(move("2024d1.txt"));
+    try{
+      File file = new File("2024d1.txt");
+      Scanner scanInput = new Scanner(file);
+      String[] input = scanInput.nextLine().split(", ");
+      System.out.println(move(input));
+    } catch (FileNotFoundException e){
+      System.out.println("file not found");
+    }
   }
 }
