@@ -2,11 +2,12 @@ import java.util.*;
 import java.io.*;
 
 public class Day2{
-  public static int bathCode (String[] input){
+  public static String bathCode (String[] input){
     int[][] keypad = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     //keypad array indexes
     int x = 1;
     int y = 1;
+    String code = "";
 
     for (int i = 0; i < input.length; i++){
         for (int j = 0; j < input[i].length(); j++){
@@ -25,15 +26,16 @@ public class Day2{
                 y--;
             }
         }
+        code += keypad[x][y];
     }
-    return keypad[x][y];
+    return code;
   }
 
   public static void main(String[] args){
     try{
       File file = new File("2024d2.txt");
       Scanner scanInput = new Scanner(file);
-      List<String> inputList = new ArrayList<>();
+      ArrayList<String> inputList = new ArrayList<String>();
       
       while (scanInput.hasNextLine()){
         inputList.add(scanInput.nextLine());
