@@ -1,12 +1,17 @@
 public class ColorDemo{
   public static void main(String[] args){
-    for(int r = 0; r < 256; r+=40){
-      for(int g = 0; g <= 256; g+=40){
-        for(int b = 0; b <= 256; b+=40){
-        System.out.print("\u001b[96;1;" + r +";" + g + ";" + b + ";1mTEXT");
+    int n = 0;
+    while (n < 10){
+      for (int i = 30; i < 38; i++){
+        System.out.print("\u001b[1;+"+i+"m~~~~~~~~~~~");
+        System.out.print("\u001b[+"+(i+11)+"m~~~~~~~~~~~");
       }
+      for (int i = 90; i < 98; i++){
+        System.out.print("\u001b[1;+"+i+"m~~~~~~~~~~~");
+        System.out.print("\u001b[+"+(i+11)+"m~~~~~~~~~~~");
+      }
+      n++;
     }
-    System.out.println();
   }
 }
-}
+  
