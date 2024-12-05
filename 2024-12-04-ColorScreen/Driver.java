@@ -21,17 +21,17 @@ public class Driver extends Text{
         go(2,1);
         for (int i = 2; i < 29; i++){
             color(BLACK,background(YELLOW),BRIGHT);
-            System.out.print("~");
+            System.out.println("~");
             erase(i, 2, 79);
             go(i,80);
             color(WHITE,background(BLUE),BRIGHT);
-            System.out.print("~");
+            System.out.println("~");
         }
         color(BLACK,background(YELLOW),BRIGHT);
-        System.out.print("~");
+        System.out.println("~");
         go(29,80);
         color(WHITE,background(BLUE),BRIGHT);
-        System.out.print("~");
+        System.out.println("~");
         System.out.println(RESET);
     }
 
@@ -78,6 +78,41 @@ public class Driver extends Text{
         System.out.println(RESET);
     }
 
+    public static void drawing(){
+        go(12,35);
+        color(RED,background(RED));
+        System.out.println("            ");
+        System.out.println(RESET);
+        for (int i = 9; i < 12; i++){
+            go(i,35);
+            color(BLACK,background(BLACK));
+            System.out.println("            ");
+            System.out.println(RESET);
+        }
+        for (int i = 13; i < 16; i++){
+            go(i,31);
+            color(BLACK,background(BLACK));
+            System.out.println("                    ");
+            System.out.println(RESET);
+        }
+        go(17,37);
+        color(BLACK,background(BLACK));
+        System.out.println("  ");
+        System.out.println(RESET);
+        go(17,43);
+        color(BLACK,background(BLACK));
+        System.out.println("  ");
+        System.out.println(RESET);
+        go(19,40);
+        color(BLUE,background(BLUE));
+        System.out.println("  ");
+        System.out.println(RESET);
+        go(21,35);
+        color(BLACK,background(BLACK));
+        System.out.println("            ");
+        System.out.println(RESET);
+    }
+
     public static void main(String[] args){
         System.out.println(CLEAR_SCREEN);
         topBorder();
@@ -85,6 +120,7 @@ public class Driver extends Text{
         leftRightBorder();
         integers();
         horizontal();
+        drawing();
         go(31,1);
     }
 }
