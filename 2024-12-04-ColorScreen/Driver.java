@@ -69,12 +69,22 @@ public class Driver extends Text{
         System.out.println(RESET);
     }
 
+    public static void horizontal(){
+        go(3,2);
+        color(RED,DARK);
+        for (int i = 0; i < 78; i++){
+            System.out.print("-");
+        }
+        System.out.println(RESET);
+    }
+
     public static void main(String[] args){
         System.out.println(CLEAR_SCREEN);
         topBorder();
         bottomBorder();
         leftRightBorder();
         integers();
+        horizontal();
         go(31,1);
     }
 }
