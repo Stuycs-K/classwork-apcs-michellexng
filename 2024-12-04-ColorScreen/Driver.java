@@ -35,11 +35,46 @@ public class Driver extends Text{
         System.out.println(RESET);
     }
 
+    public static void integers(){
+        int[] random = new int[3];
+        for (int i = 0; i < random.length; i++){
+            random[i] = (int) (Math.random()*100);
+        }
+        go(2,20);
+        if (random[0] < 25){
+            color(RED,BRIGHT);
+        }
+        else if (random[0] > 75){
+            color(GREEN,BRIGHT);
+        }
+        System.out.println(random[0]);
+        System.out.println(RESET);
+        go(2,40);
+        if (random[1] < 25){
+            color(RED,BRIGHT);
+        }
+        else if (random[1] > 75){
+            color(GREEN,BRIGHT);
+        }
+        System.out.println(random[1]);
+        System.out.println(RESET);
+        go(2,60);
+        if (random[2] < 25){
+            color(RED,BRIGHT);
+        }
+        else if (random[2] > 75){
+            color(GREEN,BRIGHT);
+        }
+        System.out.println(random[2]);
+        System.out.println(RESET);
+    }
+
     public static void main(String[] args){
         System.out.println(CLEAR_SCREEN);
         topBorder();
         bottomBorder();
         leftRightBorder();
-        System.out.println(HIDE_CURSOR);
+        integers();
+        go(31,1);
     }
 }
