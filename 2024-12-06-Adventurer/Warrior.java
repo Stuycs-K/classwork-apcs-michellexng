@@ -35,30 +35,30 @@ public class Warrior extends Adventurer{
 
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
-    int lost = other.getHP()/2;
+    int lost = other.getHP()/4;
     other.setHP(other.getHP() - lost);
-    return other.getName() + " has lost " + lost +"HP.";
+    return other.getName() + " has lost " + lost +"HP. "+other.getName()+"'s HP: "+other.getHP();
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other){
-    int gain = other.getmaxHP()-other.getHP();
+    int gain = other.getmaxHP()/5;
     other.setHP(other.getHP() + gain);
-    return other.getName() + " has gained " + gain +"HP.";
+    return other.getName() + " has gained " + gain +"HP. "+other.getName()+"'s HP: "+other.getHP();
   }
 
   //heall or buff self
   public String support(){
     int gain = getmaxHP()-(getHP()/2);
     this.setHP(getHP() + gain);
-    return getName() + " has gained " + gain+"HP.";
+    return getName() + " has gained " + gain+"HP. "+getName()+"'s HP: "+getHP();
   }
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
-    int lost = other.getSpecial()/3;
+    int lost = getSpecial()/3;
     setSpecial(getSpecial() - 1);
-    other.setHP(other.getSpecial() - lost);
-    return other.getName()+"has lost"+lost+other.getSpecialName()+".";
+    other.setHP(other.getHP() - lost);
+    return other.getName()+" has lost "+lost+"HP. "+getName()+" has "+getSpecial()+getSpecialName();
   }
 }
