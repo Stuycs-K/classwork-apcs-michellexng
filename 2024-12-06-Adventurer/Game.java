@@ -7,8 +7,9 @@ public class Game{
     System.out.println(p1.getName()+", "+p1.getHP()+"/"+p1.getmaxHP()+" HP, "+p1.getSpecial()+"/"+p1.getSpecialMax()+" "+p1.getSpecialName());
     System.out.println(p2.getName()+", "+p2.getHP()+"/"+p2.getmaxHP()+" HP, "+p2.getSpecial()+"/"+p2.getSpecialMax()+" "+p2.getSpecialName());
     System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-    // String userName = userInput.nextLine();
-    // //Do something with the input
-    // System.out.println("Username is: " + userName);
+    String action = userInput.nextLine();
+    if (action.equals("a")){
+      System.out.println(p1.attack(p2));
+    }
   }
 }
