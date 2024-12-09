@@ -4,20 +4,20 @@ public class Warrior extends Adventurer{
 
   public Warrior(String name){
     super(name);
-    this.rage = 10;
-    this.maxRage = 10;
+    rage = 10;
+    maxRage = 10;
   }
 
   public Warrior(String name, int hp){
     super(name, hp);
-    this.maxRage = 10;
-    this.rage = maxRage;
+    maxRage = 10;
+    rage = maxRage;
   }
 
   public Warrior(String name, int hp, int rage){
     super(name, hp);
-    this.rage = rage;
-    this.maxRage = rage;
+    rage = rage;
+    maxRage = rage;
   }
 
   public String getSpecialName(){
@@ -27,22 +27,22 @@ public class Warrior extends Adventurer{
     return this.rage;
   }
   public void setSpecial(int n){
-    this.rage = n;
+    rage = n;
   }
   public int getSpecialMax(){
-    return this.maxRage;
+    return maxRage;
   }
 
   //hurt or hinder the target adventurer
   public String attack(Adventurer other){
-    int lost = other.getHP()/4;
+    int lost = (int) (Math.random()*4);
     other.setHP(other.getHP() - lost);
     return other.getName() + " has lost " + lost +"HP. "+other.getName()+"'s HP: "+other.getHP();
   }
 
   //heall or buff the target adventurer
   public String support(Adventurer other){
-    int gain = other.getmaxHP()/5;
+    int gain = (int) (Math.random()*5);
     other.setHP(other.getHP() + gain);
     return other.getName() + " has gained " + gain +"HP. "+other.getName()+"'s HP: "+other.getHP();
   }
@@ -56,7 +56,7 @@ public class Warrior extends Adventurer{
 
   //hurt or hinder the target adventurer, consume some special resource
   public String specialAttack(Adventurer other){
-    int lost = getSpecial()/3;
+    int lost = (int) (Math.random()*10);
     setSpecial(getSpecial() - 1);
     other.setHP(other.getHP() - lost);
     return other.getName()+" has lost "+lost+"HP. "+getName()+" has "+getSpecial()+getSpecialName();
