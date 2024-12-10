@@ -6,9 +6,27 @@ public class Game{
     Adventurer p2 = new Warrior("Tim");
     System.out.println(p1.getName()+", "+p1.getHP()+"/"+p1.getmaxHP()+" HP, "+p1.getSpecial()+"/"+p1.getSpecialMax()+" "+p1.getSpecialName());
     System.out.println(p2.getName()+", "+p2.getHP()+"/"+p2.getmaxHP()+" HP, "+p2.getSpecial()+"/"+p2.getSpecialMax()+" "+p2.getSpecialName());
-    System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-    String move = userInput.nextLine();
-    action(p1, p2, move);
+    while (true){
+
+      if (p1.getHP() <= 0){
+        System.out.println(p1.getName()+" is dead. Game over!");
+        return;
+      }
+      else if (p2.getHP() <= 0){
+        System.out.println(p2.getName()+" is dead. Game over!");
+        return;
+      }
+
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+      String move = userInput.nextLine();
+
+      if (move.equals("quit")){
+        System.out.println("Game over!");
+        return;
+      }
+
+      action(p1, p2, move);
+    }
   }
   public static void action(Adventurer p1, Adventurer p2, String move){
     if (move.equals("a")){
@@ -20,12 +38,5 @@ public class Game{
     if (move.equals("su")){
       System.out.println(p1.support(p2));
     }
-    if (move.equals("quit")){
-      System.out.println("Game over");
-      return;
-    }
-    // else {
-    //   System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
-    // }
   }
 }
