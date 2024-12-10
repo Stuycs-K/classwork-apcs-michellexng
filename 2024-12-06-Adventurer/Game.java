@@ -24,8 +24,20 @@ public class Game{
         System.out.println("Game over!");
         return;
       }
+      boolean valid = false;
+      if (move.equals("a")||move.equals("sp")||move.equals("su")){
+        action(p1, p2, move);
+        valid = true;
+      }
+      else {
+        System.out.println("Try again.");
+      }
 
-      action(p1, p2, move);
+      if (valid && p2.getHP()>0){
+        String[] moves = {"a", "sp", "su"};
+        String randomMove = moves[(int)(Math.random()*moves.length)];
+        action(p2, p1, randomMove);
+      } 
     }
   }
   public static void action(Adventurer p1, Adventurer p2, String move){
@@ -36,7 +48,7 @@ public class Game{
       System.out.println(p1.specialAttack(p2));
     }
     if (move.equals("su")){
-      System.out.println(p1.support(p2));
+      System.out.println(p1.support());
     }
   }
 }
