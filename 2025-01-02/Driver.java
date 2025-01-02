@@ -8,6 +8,8 @@ public class Driver{
     }
   }
   public static void main(String[] args){
-    System.out.println(fib(46));
+    System.out.println(fib(100));
   }
 }
+
+//n = 46 for time < 10s and fits in int
